@@ -1,24 +1,83 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="T_Converter" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bg (1)" translatesAutoresizingMaskIntoConstraints="NO" id="If9-PM-nMc">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                            </imageView>
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="iTF-rd-Okr">
+                                <rect key="frame" x="-45" y="428" width="504" height="41"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="TVG-Z9-PWC"/>
+                                    <constraint firstAttribute="width" constant="500" id="mLA-qw-Cka"/>
+                                </constraints>
+                                <color key="minimumTrackTintColor" red="0.95686274509803915" green="0.29803921568627451" blue="0.45490196078431372" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="maximumTrackTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="thumbTintColor" red="0.95686274510000002" green="0.29803921570000003" blue="0.4549019608" alpha="1" colorSpace="calibratedRGB"/>
+                                <connections>
+                                    <action selector="sliderValueChange:" destination="BYZ-38-t0r" eventType="valueChanged" id="lkI-wV-Ts4"/>
+                                </connections>
+                            </slider>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="120" translatesAutoresizingMaskIntoConstraints="NO" id="HCe-I2-3Qt">
+                                <rect key="frame" x="76.5" y="426.5" width="261" height="43"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0º C" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wsq-gl-3GS">
+                                        <rect key="frame" x="0.0" y="0.0" width="70.5" height="43"/>
+                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="36"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0º F" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e6g-7W-vtI">
+                                        <rect key="frame" x="190.5" y="0.0" width="70.5" height="43"/>
+                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="36"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="If9-PM-nMc" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="DSl-2G-80k"/>
+                            <constraint firstItem="iTF-rd-Okr" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="FEw-Eh-bgH"/>
+                            <constraint firstAttribute="bottom" secondItem="If9-PM-nMc" secondAttribute="bottom" id="Nvo-V8-s1a"/>
+                            <constraint firstItem="HCe-I2-3Qt" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="RFw-Vk-gSR"/>
+                            <constraint firstItem="If9-PM-nMc" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="cj8-qG-ZHv"/>
+                            <constraint firstItem="iTF-rd-Okr" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="e5q-4j-fjQ"/>
+                            <constraint firstItem="If9-PM-nMc" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="foi-FD-j9D"/>
+                            <constraint firstItem="HCe-I2-3Qt" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="uo3-io-P8P"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="celsiusLabel" destination="Wsq-gl-3GS" id="0uI-J8-9xM"/>
+                        <outlet property="fahrenheitLabel" destination="e6g-7W-vtI" id="SYt-pb-rvc"/>
+                        <outlet property="slider" destination="iTF-rd-Okr" id="GE0-5I-iIY"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="18.840579710144929" y="64.955357142857139"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="bg (1)" width="751" height="1334"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
 </document>
